@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -106,148 +106,30 @@
   </div>
 
   <script>
+    // 修复后的数据结构
     const fillBlank = [
-      
+      { sentence: "大腹便便", options: ["A. dà fù pián pián", "B. dà fù biàn biàn"], answer: "A. dà fù pián pián" },
+      { sentence: "大义凛然", options: ["A. dà yì lǐn rán", "B. dà yì bǐng rán"], answer: "A. dà yì lǐn rán" },
+      { sentence: "大相径庭", options: ["A. dà xiāng jìng tíng", "B. dà xiāng jīng tíng"], answer: "A. dà xiāng jìng tíng" },
+      { sentence: "大器晚成", options: ["A. dà qì wǎn chéng", "B. dà qì wán chéng"], answer: "A. dà qì wǎn chéng" },
+      { sentence: "大智若愚", options: ["A. dà zhì ruò yú", "B. dà zhì ruò yǔ"], answer: "A. dà zhì ruò yú" }
+    ];
 
     const pinyinChoose = [
-     # 汉语拼音 Multiple Choice Questions and Answer Key
-
-questions = {
-    1: {
-        "word": "大腹便便",
-        "options": ["A. dà fù pián pián", "B. dà fù biàn biàn"],
-        "answer": "A"
-    },
-    2: {
-        "word": "大义凛然",
-        "options": ["A. dà yì lǐn rán", "B. dà yì bǐng rán"],
-        "answer": "A"
-    },
-    3: {
-        "word": "大相径庭",
-        "options": ["A. dà xiāng jìng tíng", "B. dà xiāng jīng tíng"],
-        "answer": "A"
-    },
-    4: {
-        "word": "大器晚成",
-        "options": ["A. dà qì wǎn chéng", "B. dà qì wán chéng"],
-        "answer": "A"
-    },
-    5: {
-        "word": "大智若愚",
-        "options": ["A. dà zhì ruò yú", "B. dà zhì ruò yǔ"],
-        "answer": "A"
-    },
-    6: {
-        "word": "大快人心",
-        "options": ["A. dà kuài rén xīn", "B. dà kuài rén xīng"],
-        "answer": "A"
-    },
-    7: {
-        "word": "当机立断",
-        "options": ["A. dāng jī lì duàn", "B. dàng jī lì duàn"],
-        "answer": "A"
-    },
-    8: {
-        "word": "得不偿失",
-        "options": ["A. dé bù cháng shī", "B. dé bù shǎng shī"],
-        "answer": "A"
-    },
-    9: {
-        "word": "得心应手",
-        "options": ["A. dé xīn yìng shǒu", "B. dé xīn yīng shǒu"],
-        "answer": "A"
-    },
-    10: {
-        "word": "调虎离山",
-        "options": ["A. tiáo hǔ lí shān", "B. diào hǔ lí shān"],
-        "answer": "B"
-    },
-    11: {
-        "word": "大惑不解",
-        "options": ["A. dà huò bù jiě", "B. dà huò bù xiè"],
-        "answer": "A"
-    },
-    12: {
-        "word": "大言不惭",
-        "options": ["A. dà yán bù cán", "B. dà yán bù cǎn"],
-        "answer": "A"
-    },
-    13: {
-        "word": "呆若木鸡",
-        "options": ["A. dāi ruò mù jī", "B. ái ruò mù jī"],
-        "answer": "A"
-    },
-    14: {
-        "word": "单刀直入",
-        "options": ["A. dān dāo zhí rù", "B. dān dāo zhí rǔ"],
-        "answer": "A"
-    },
-    15: {
-        "word": "胆大妄为",
-        "options": ["A. dǎn dà wàng wéi", "B. dǎn dà wàng wèi"],
-        "answer": "A"
-    },
-    16: {
-        "word": "当仁不让",
-        "options": ["A. dāng rén bù ràng", "B. dàng rén bù ràng"],
-        "answer": "A"
-    },
-    17: {
-        "word": "倒屣相迎",
-        "options": ["A. dǎo xǐ xiāng yíng", "B. dào xǐ xiāng yíng"],
-        "answer": "B"
-    },
-    18: {
-        "word": "道貌岸然",
-        "options": ["A. dào mào àn rán", "B. dào mào yán rán"],
-        "answer": "A"
-    },
-    19: {
-        "word": "雕虫小技",
-        "options": ["A. diāo chóng xiǎo jì", "B. diāo chóng xiǎo jī"],
-        "answer": "A"
-    },
-    20: {
-        "word": "点铁成金",
-        "options": ["A. diǎn tiě chéng jīn", "B. diǎn tiě chén jīn"],
-        "answer": "A"
-    },
-} ]
-
-# Example: print one question
-    for opt in q_data["options"]:
-        print(opt)
-    print(f"Answer: {q_data['answer']}\n")
-
- 
+      { sentence: "大腹便便的正确拼音是?", options: ["A. dà fù pián pián", "B. dà fù biàn biàn"], answer: "A. dà fù pián pián" },
+      { sentence: "大义凛然的正确拼音是?", options: ["A. dà yì lǐn rán", "B. dà yì bǐng rán"], answer: "A. dà yì lǐn rán" },
+      { sentence: "大相径庭的正确拼音是?", options: ["A. dà xiāng jìng tíng", "B. dà xiāng jīng tíng"], answer: "A. dà xiāng jìng tíng" },
+      { sentence: "大器晚成的正确拼音是?", options: ["A. dà qì wǎn chéng", "B. dà qì wán chéng"], answer: "A. dà qì wǎn chéng" },
+      { sentence: "大智若愚的正确拼音是?", options: ["A. dà zhì ruò yú", "B. dà zhì ruò yǔ"], answer: "A. dà zhì ruò yú" }
+    ];
 
     const idiomsQuiz = [
-  { sentence: "大刀阔（ ）", options: ["斧", "刀", "剑", "锤"], answer: "斧" },
-  { sentence: "大发雷（ ）", options: ["电", "雨", "霆", "声"], answer: "霆" },
-  { sentence: "大（ ）不解", options: ["惑", "疑", "乱", "苦"], answer: "惑" },
-  { sentence: "大（ ）人心", options: ["快", "喜", "乐", "安"], answer: "快" },
-  { sentence: "大器晚（ ）", options: ["成", "熟", "到", "功"], answer: "成" },
-  { sentence: "大相径（ ）", options: ["庭", "道", "远", "别"], answer: "庭" },
-  { sentence: "大言不（ ）", options: ["惭", "耻", "愧", "虚"], answer: "惭" },
-  { sentence: "大义（ ）然", options: ["凛", "壮", "正", "直"], answer: "凛" },
-  { sentence: "大智若（ ）", options: ["愚", "呆", "笨", "木"], answer: "愚" },
-  { sentence: "（ ）若木鸡", options: ["呆", "傻", "愚", "痴"], answer: "呆" },
-  { sentence: "（ ）人接物", options: ["待", "代", "带", "贷"], answer: "待" },
-  { sentence: "胆大（ ）为", options: ["妄", "横", "放", "狂"], answer: "妄" },
-  { sentence: "当机（ ）断", options: ["立", "快", "速", "决"], answer: "立" },
-  { sentence: "当（ ）不让", options: ["仁", "先", "众", "公"], answer: "仁" },
-  { sentence: "倒（ ）相迎", options: ["屣", "鞋", "履", "步"], answer: "屣" },
-  { sentence: "道貌（ ）然", options: ["岸", "严", "正", "直"], answer: "岸" },
-  { sentence: "（ ）不（ ）失", options: ["得，偿", "来，去", "进，退", "取，还"], answer: "得，偿" },
-  { sentence: "（ ）过且过", options: ["得", "混", "将", "凑"], answer: "得" },
-  { sentence: "得心应（ ）手", options: ["应 (yìng)", "合", "配", "顺"], answer: "应 (yìng)" },
-  { sentence: "（ ）倒黑白", options: ["颠", "翻", "乱", "改"], answer: "颠" },
-  { sentence: "点铁成（ ）", options: ["金", "银", "铜", "玉"], answer: "金" },
-  { sentence: "雕虫小（ ）", options: ["技", "术", "活", "招"], answer: "技" },
-  { sentence: "（ ）虎离山", options: ["调", "引", "诱", "请"], answer: "调" }
-];
-
+      { sentence: "大刀阔（ ）", options: ["斧", "刀", "剑", "锤"], answer: "斧" },
+      { sentence: "大发雷（ ）", options: ["电", "雨", "霆", "声"], answer: "霆" },
+      { sentence: "大（ ）不解", options: ["惑", "疑", "乱", "苦"], answer: "惑" },
+      { sentence: "大（ ）人心", options: ["快", "喜", "乐", "安"], answer: "快" },
+      { sentence: "大器晚（ ）", options: ["成", "熟", "到", "功"], answer: "成" }
+    ];
 
     let currentMode = 'fill-blank';
     let currentIndex = 0;
@@ -277,6 +159,12 @@ questions = {
     }
 
     function showQuestion() {
+      if (questions.length === 0) {
+        questionEl.innerHTML = "该模式暂无题目";
+        optionsEl.innerHTML = '';
+        return;
+      }
+      
       const q = questions[currentIndex];
       questionEl.innerHTML = q.sentence;
       optionsEl.innerHTML = '';
@@ -322,8 +210,8 @@ questions = {
       };
     });
 
+    // 初始化游戏
     loadQuestions();
   </script>
 </body>
 </html>
-
