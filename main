@@ -1,0 +1,329 @@
+this is my coding, i want u to understand the format. <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>成语学习游戏</title>
+  <style>
+    body {
+      font-family: 'Microsoft YaHei', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #e67e22;
+    }
+    .game-mode-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .game-mode-buttons button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .game-mode-buttons button.active {
+      background-color: #e74c3c;
+    }
+    .question-area {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .question {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .option-btn {
+      padding: 10px;
+      background-color: #ecf0f1;
+      border: 2px solid #bdc3c7;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .option-btn.correct {
+      background-color: #2ecc71;
+      color: white;
+    }
+    .option-btn.incorrect {
+      background-color: #e74c3c;
+      color: white;
+    }
+    .result-screen {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .hidden {
+      display: none;
+    }
+    .control-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>成语学习游戏</h1>
+  <div class="game-mode-buttons">
+    <button data-mode="fill-blank" class="active">练习一：成语填空</button>
+    <button data-mode="pinyin-choose">练习二：拼音选择</button>
+    <button data-mode="missing-char">练习三：缺字填空</button>
+  </div>
+
+  <div class="question-area" id="question-area">
+    <div class="question" id="question">点击开始游戏</div>
+    <div class="options" id="options"></div>
+    <button class="control-btn" id="next-btn">下一题</button>
+  </div>
+
+  <div class="result-screen hidden" id="result-screen">
+    <h2>答题结束！</h2>
+    <p id="final-score"></p>
+    <p>🎉 很棒！继续加油！🎉</p>
+    <button class="control-btn" id="restart-btn">再玩一次</button>
+  </div>
+
+  <script>
+    const fillBlank = [
+      
+
+    const pinyinChoose = [
+     # 汉语拼音 Multiple Choice Questions and Answer Key
+
+questions = {
+    1: {
+        "word": "大腹便便",
+        "options": ["A. dà fù pián pián", "B. dà fù biàn biàn"],
+        "answer": "A"
+    },
+    2: {
+        "word": "大义凛然",
+        "options": ["A. dà yì lǐn rán", "B. dà yì bǐng rán"],
+        "answer": "A"
+    },
+    3: {
+        "word": "大相径庭",
+        "options": ["A. dà xiāng jìng tíng", "B. dà xiāng jīng tíng"],
+        "answer": "A"
+    },
+    4: {
+        "word": "大器晚成",
+        "options": ["A. dà qì wǎn chéng", "B. dà qì wán chéng"],
+        "answer": "A"
+    },
+    5: {
+        "word": "大智若愚",
+        "options": ["A. dà zhì ruò yú", "B. dà zhì ruò yǔ"],
+        "answer": "A"
+    },
+    6: {
+        "word": "大快人心",
+        "options": ["A. dà kuài rén xīn", "B. dà kuài rén xīng"],
+        "answer": "A"
+    },
+    7: {
+        "word": "当机立断",
+        "options": ["A. dāng jī lì duàn", "B. dàng jī lì duàn"],
+        "answer": "A"
+    },
+    8: {
+        "word": "得不偿失",
+        "options": ["A. dé bù cháng shī", "B. dé bù shǎng shī"],
+        "answer": "A"
+    },
+    9: {
+        "word": "得心应手",
+        "options": ["A. dé xīn yìng shǒu", "B. dé xīn yīng shǒu"],
+        "answer": "A"
+    },
+    10: {
+        "word": "调虎离山",
+        "options": ["A. tiáo hǔ lí shān", "B. diào hǔ lí shān"],
+        "answer": "B"
+    },
+    11: {
+        "word": "大惑不解",
+        "options": ["A. dà huò bù jiě", "B. dà huò bù xiè"],
+        "answer": "A"
+    },
+    12: {
+        "word": "大言不惭",
+        "options": ["A. dà yán bù cán", "B. dà yán bù cǎn"],
+        "answer": "A"
+    },
+    13: {
+        "word": "呆若木鸡",
+        "options": ["A. dāi ruò mù jī", "B. ái ruò mù jī"],
+        "answer": "A"
+    },
+    14: {
+        "word": "单刀直入",
+        "options": ["A. dān dāo zhí rù", "B. dān dāo zhí rǔ"],
+        "answer": "A"
+    },
+    15: {
+        "word": "胆大妄为",
+        "options": ["A. dǎn dà wàng wéi", "B. dǎn dà wàng wèi"],
+        "answer": "A"
+    },
+    16: {
+        "word": "当仁不让",
+        "options": ["A. dāng rén bù ràng", "B. dàng rén bù ràng"],
+        "answer": "A"
+    },
+    17: {
+        "word": "倒屣相迎",
+        "options": ["A. dǎo xǐ xiāng yíng", "B. dào xǐ xiāng yíng"],
+        "answer": "B"
+    },
+    18: {
+        "word": "道貌岸然",
+        "options": ["A. dào mào àn rán", "B. dào mào yán rán"],
+        "answer": "A"
+    },
+    19: {
+        "word": "雕虫小技",
+        "options": ["A. diāo chóng xiǎo jì", "B. diāo chóng xiǎo jī"],
+        "answer": "A"
+    },
+    20: {
+        "word": "点铁成金",
+        "options": ["A. diǎn tiě chéng jīn", "B. diǎn tiě chén jīn"],
+        "answer": "A"
+    },
+} ]
+
+# Example: print one question
+    for opt in q_data["options"]:
+        print(opt)
+    print(f"Answer: {q_data['answer']}\n")
+
+ 
+
+    const idiomsQuiz = [
+  { sentence: "大刀阔（ ）", options: ["斧", "刀", "剑", "锤"], answer: "斧" },
+  { sentence: "大发雷（ ）", options: ["电", "雨", "霆", "声"], answer: "霆" },
+  { sentence: "大（ ）不解", options: ["惑", "疑", "乱", "苦"], answer: "惑" },
+  { sentence: "大（ ）人心", options: ["快", "喜", "乐", "安"], answer: "快" },
+  { sentence: "大器晚（ ）", options: ["成", "熟", "到", "功"], answer: "成" },
+  { sentence: "大相径（ ）", options: ["庭", "道", "远", "别"], answer: "庭" },
+  { sentence: "大言不（ ）", options: ["惭", "耻", "愧", "虚"], answer: "惭" },
+  { sentence: "大义（ ）然", options: ["凛", "壮", "正", "直"], answer: "凛" },
+  { sentence: "大智若（ ）", options: ["愚", "呆", "笨", "木"], answer: "愚" },
+  { sentence: "（ ）若木鸡", options: ["呆", "傻", "愚", "痴"], answer: "呆" },
+  { sentence: "（ ）人接物", options: ["待", "代", "带", "贷"], answer: "待" },
+  { sentence: "胆大（ ）为", options: ["妄", "横", "放", "狂"], answer: "妄" },
+  { sentence: "当机（ ）断", options: ["立", "快", "速", "决"], answer: "立" },
+  { sentence: "当（ ）不让", options: ["仁", "先", "众", "公"], answer: "仁" },
+  { sentence: "倒（ ）相迎", options: ["屣", "鞋", "履", "步"], answer: "屣" },
+  { sentence: "道貌（ ）然", options: ["岸", "严", "正", "直"], answer: "岸" },
+  { sentence: "（ ）不（ ）失", options: ["得，偿", "来，去", "进，退", "取，还"], answer: "得，偿" },
+  { sentence: "（ ）过且过", options: ["得", "混", "将", "凑"], answer: "得" },
+  { sentence: "得心应（ ）手", options: ["应 (yìng)", "合", "配", "顺"], answer: "应 (yìng)" },
+  { sentence: "（ ）倒黑白", options: ["颠", "翻", "乱", "改"], answer: "颠" },
+  { sentence: "点铁成（ ）", options: ["金", "银", "铜", "玉"], answer: "金" },
+  { sentence: "雕虫小（ ）", options: ["技", "术", "活", "招"], answer: "技" },
+  { sentence: "（ ）虎离山", options: ["调", "引", "诱", "请"], answer: "调" }
+];
+
+
+    let currentMode = 'fill-blank';
+    let currentIndex = 0;
+    let score = 0;
+    let questions = [];
+
+    const questionEl = document.getElementById('question');
+    const optionsEl = document.getElementById('options');
+    const nextBtn = document.getElementById('next-btn');
+    const resultScreen = document.getElementById('result-screen');
+    const questionArea = document.getElementById('question-area');
+    const finalScore = document.getElementById('final-score');
+    const restartBtn = document.getElementById('restart-btn');
+    const modeBtns = document.querySelectorAll('.game-mode-buttons button');
+
+    function loadQuestions() {
+      switch (currentMode) {
+        case 'fill-blank': questions = fillBlank; break;
+        case 'pinyin-choose': questions = pinyinChoose; break;
+        case 'missing-char': questions = idiomsQuiz; break;
+      }
+      currentIndex = 0;
+      score = 0;
+      resultScreen.classList.add('hidden');
+      questionArea.classList.remove('hidden');
+      showQuestion();
+    }
+
+    function showQuestion() {
+      const q = questions[currentIndex];
+      questionEl.innerHTML = q.sentence;
+      optionsEl.innerHTML = '';
+      q.options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.textContent = opt;
+        btn.onclick = () => handleAnswer(btn, opt === q.answer);
+        optionsEl.appendChild(btn);
+      });
+    }
+
+    function handleAnswer(button, correct) {
+      document.querySelectorAll('.option-btn').forEach(btn => btn.disabled = true);
+      if (correct) {
+        button.classList.add('correct');
+        score += 1;
+      } else {
+        button.classList.add('incorrect');
+        [...optionsEl.children].find(btn => btn.textContent === questions[currentIndex].answer).classList.add('correct');
+      }
+    }
+
+    nextBtn.onclick = () => {
+      currentIndex++;
+      if (currentIndex < questions.length) {
+        showQuestion();
+      } else {
+        questionArea.classList.add('hidden');
+        resultScreen.classList.remove('hidden');
+        finalScore.textContent = `总得分：${score} / ${questions.length}`;
+      }
+    };
+
+    restartBtn.onclick = loadQuestions;
+
+    modeBtns.forEach(btn => {
+      btn.onclick = () => {
+        modeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentMode = btn.dataset.mode;
+        loadQuestions();
+      };
+    });
+
+    loadQuestions();
+  </script>
+</body>
+</html>
+
