@@ -270,193 +270,110 @@
   </footer>
 
   <script>
-    // 成语填空数据
+    // 成语填空数据 - 修复后的版本
     const fillBlank = [
-  const fillBlank = [
-  { sentence: "看到孩子把房间弄得一团糟，妈妈忍不住（    ）。", options: ["大发雷霆", "得心应手", "当仁不让", "呆若木鸡"], answer: "大发雷霆" },
-  { sentence: "这位作家到了五十岁才写出成名作，堪称（    ）的典范。", options: ["大器晚成", "大腹便便", "大义凛然", "点铁成金"], answer: "大器晚成" },
-  { sentence: "他用这台新相机拍照非常（    ），拍出了很多好照片。", options: ["得心应手", "大言不惭", "胆大妄为", "大快人心"], answer: "得心应手" },
-  { sentence: "这位英雄（    ）地走向刑场，毫无惧色。", options: ["大义凛然", "胆大妄为", "道貌岸然", "大惑不解"], answer: "大义凛然" },
-  { sentence: "听到自己中了一等奖，他惊讶得（    ），站在原地一动不动。", options: ["呆若木鸡", "当机立断", "得过且过", "大智若愚"], answer: "呆若木鸡" },
-  { sentence: "新经理上任后，对公司冗余的部门进行了（    ）的精简。", options: ["大刀阔斧", "雕虫小技", "点铁成金", "倒屣相迎"], answer: "大刀阔斧" },
-  { sentence: "他（    ）地提出了问题。", options: ["单刀直入", "得不偿失", "胆大妄为", "大快人心"], answer: "单刀直入" },
-  { sentence: "他在法庭上（    ），混淆视听。", options: ["颠倒黑白", "大智若愚", "得过且过", "大腹便便"], answer: "颠倒黑白" },
-  { sentence: "那位（    ）的厨师做的菜却非常精致美味。", options: ["大腹便便", "当仁不让", "大器晚成", "调虎离山"], answer: "大腹便便" },
-  { sentence: "遇到危险时，他（    ），带大家安全脱险。", options: ["当机立断", "大言不惭", "点铁成金", "道貌岸然"], answer: "当机立断" },
-  { sentence: "他（    ）地说自己一天就能学会一门语言。", options: ["大言不惭", "呆若木鸡", "胆大妄为", "点铁成金"], answer: "大言不惭" },
-  { sentence: "这个长期欺压百姓的黑恶势力终于被铲除，真是（    ）。", options: ["大快人心", "大义凛然", "大智若愚", "大发雷霆"], answer: "大快人心" },
-  { sentence: "他明明是肇事者，却试图（    ），诬陷是对方的责任。", options: ["颠倒黑白", "胆大妄为", "得不偿失", "雕虫小技"], answer: "颠倒黑白" },
-  { sentence: "我们不能抱着（    ）的心态来准备这次重要的考试。", options: ["得过且过", "大惑不解", "大器晚成", "道貌岸然"], answer: "得过且过" },
-  { sentence: "会议开始时，主持人就（    ），提出了今天要解决的核心问题。", options: ["单刀直入", "大言不惭", "大刀阔斧", "大快人心"], answer: "单刀直入" },
-  { sentence: "别看他平时不说话，关键时总能想出办法，真是（    ）。", options: ["大智若愚", "大腹便便", "胆大妄为", "大发雷霆"], answer: "大智若愚" },
-  { sentence: "看到天气突然恶化，船长（    ），下令返航。", options: ["当机立断", "得过且过", "调虎离山", "道貌岸然"], answer: "当机立断" },
-  { sentence: "他年轻时平凡无奇，没想到（    ）。", options: ["大器晚成", "大义凛然", "呆若木鸡", "得心应手"], answer: "大器晚成" },
-  { sentence: "这位优秀的编辑真有（    ）的本事，能把平淡的稿件修改得精彩无比。", options: ["点铁成金", "大快人心", "大智若愚", "胆大妄为"], answer: "点铁成金" },
-  { sentence: "社区需要志愿者，老王（    ）地第一个报了名。", options: ["当仁不让", "道貌岸然", "大言不惭", "大腹便便"], answer: "当仁不让" },
-  { sentence: "为了赚这点外快而把身体累垮了，实在是（    ）。", options: ["得不偿失", "大刀阔斧", "调虎离山", "大发雷霆"], answer: "得不偿失" },
-  { sentence: "圣诞老人总是以一位（    ）、笑容慈祥的老爷爷形象出现。", options: ["大腹便便", "大器晚成", "大快人心", "得过且过"], answer: "大腹便便" },
-  { sentence: "他的实际表现和面试时给人的承诺（    ）。", options: ["大相径庭", "点铁成金", "单刀直入", "当机立断"], answer: "大相径庭" },
-  { sentence: "变魔术不过是（    ），真正的本事要靠刻苦学习。", options: ["雕虫小技", "大智若愚", "大刀阔斧", "道貌岸然"], answer: "雕虫小技" },
-  { sentence: "她在（    ）方面非常得体，客户都很信任她。", options: ["待人接物", "大发雷霆", "大言不惭", "胆大妄为"], answer: "待人接物" },
-  { sentence: "听说多年未见的老友来访，他欣喜若狂，（    ）。", options: ["倒屣相迎", "大快人心", "得不偿失", "点铁成金"], answer: "倒屣相迎" },
-  { sentence: "他工作（    ），难有成绩。", options: ["得过且过", "大智若愚", "大器晚成", "胆大妄为"], answer: "得过且过" },
-  { sentence: "这群（    ）的窃贼竟然在白天入室行窃。", options: ["胆大妄为", "大义凛然", "大言不惭", "道貌岸然"], answer: "胆大妄为" },
-  { sentence: "面对敌人的威胁，他（    ），毫不退缩。", options: ["大义凛然", "大快人心", "得心应手", "大惑不解"], answer: "大义凛然" },
-  { sentence: "听了他的话，我还是（    ）。", options: ["大惑不解", "点铁成金", "当仁不让", "得过且过"], answer: "大惑不解" },
-  { sentence: "这次改革需要（    ）的措施，才能见到成效。", options: ["大刀阔斧", "大腹便便", "调虎离山", "大智若愚"], answer: "大刀阔斧" },
-  { sentence: "乡亲们在村口（    ），欢迎远方的客人。", options: ["倒屣相迎", "大发雷霆", "得不偿失", "大义凛然"], answer: "倒屣相迎" },
-  { sentence: "他总是（    ）地说教，其实并不真诚。", options: ["道貌岸然", "胆大妄为", "大言不惭", "大快人心"], answer: "道貌岸然" },
-  { sentence: "练习多了，他写作文已经（    ）。", options: ["得心应手", "大快人心", "点铁成金", "当仁不让"], answer: "得心应手" },
-  { sentence: "他发现有人作弊，立刻（    ）。", options: ["大发雷霆", "大惑不解", "胆大妄为", "得过且过"], answer: "大发雷霆" },
-  { sentence: "那个（    ）的教授私下里却做着违法的勾当。", options: ["道貌岸然", "大智若愚", "大义凛然", "大腹便便"], answer: "道貌岸然" },
-  { sentence: "为了省小钱而耽误大事，真是（    ）。", options: ["得不偿失", "大器晚成", "单刀直入", "大快人心"], answer: "得不偿失" },
-  { sentence: "他们用了（    ）之计，成功避开了敌人。", options: ["调虎离山", "大发雷霆", "胆大妄为", "大义凛然"], answer: "调虎离山" },
-  { sentence: "他（    ）很有礼貌，大家都喜欢和他交往。", options: ["待人接物", "得过且过", "点铁成金", "道貌岸然"], answer: "待人接物" },
-  { sentence: "他居然放弃了这么好的机会，真让人（    ）。", options: ["大惑不解", "当仁不让", "得不偿失", "大智若愚"], answer: "大惑不解" },
-  { sentence: "罪犯终于被捉拿归案，真是（    ）。", options: ["大快人心", "大义凛然", "得心应手", "大发雷霆"], answer: "大快人心" },
-  { sentence: "他们两人的看法（    ）,所以经常吵架。", options: ["大相径庭", "调虎离山", "得不偿失", "大智若愚"], answer: "大相径庭" },
-  { sentence: "他总是（    ）地吹嘘自己的能力。", options: ["大言不惭", "大发雷霆", "点铁成金", "道貌岸然"], answer: "大言不惭" },
-  { sentence: "我们先派人引开保安，用（    ）计，然后再进去。", options: ["调虎离山", "大快人心", "得心应手", "大惑不解"], answer: "调虎离山" },
-  { sentence: "这位画家的手笔真是（    ），作品价值连城。", options: ["点铁成金", "大智若愚", "单刀直入", "得不偿失"], answer: "点铁成金" },
-  { sentence: "他平时沉默寡言，其实是（    ）。", options: ["大智若愚", "大器晚成", "道貌岸然", "大快人心"], answer: "大智若愚" },
-  { sentence: "听到这个消息，他吓得（    ）。", options: ["呆若木鸡", "大发雷霆", "大义凛然", "得心应手"], answer: "呆若木鸡" },
-  { sentence: "帮助别人是应该的事，我们要（    ）。", options: ["当仁不让", "大快人心", "大言不惭", "胆大妄为"], answer: "当仁不让" },
-  { sentence: "他承诺的福利和实际情况（    ），让员工们非常失望。", options: ["大相径庭", "得不偿失", "大发雷霆", "单刀直入"], answer: "大相径庭" },
-  { sentence: "那只（    ）的熊猫悠闲地坐在树下吃着竹子。", options: ["大腹便便", "大智若愚", "大言不惭", "当仁不让"], answer: "大腹便便" }
-];
+      { sentence: "看到孩子把房间弄得一团糟，妈妈忍不住（    ）。", options: ["大发雷霆", "得心应手", "当仁不让", "呆若木鸡"], answer: "大发雷霆" },
+      { sentence: "这位作家到了五十岁才写出成名作，堪称（    ）的典范。", options: ["大器晚成", "大腹便便", "大义凛然", "点铁成金"], answer: "大器晚成" },
+      { sentence: "他用这台新相机拍照非常（    ），拍出了很多好照片。", options: ["得心应手", "大言不惭", "胆大妄为", "大快人心"], answer: "得心应手" },
+      { sentence: "这位英雄（    ）地走向刑场，毫无惧色。", options: ["大义凛然", "胆大妄为", "道貌岸然", "大惑不解"], answer: "大义凛然" },
+      { sentence: "听到自己中了一等奖，他惊讶得（    ），站在原地一动不动。", options: ["呆若木鸡", "当机立断", "得过且过", "大智若愚"], answer: "呆若木鸡" },
+      { sentence: "新经理上任后，对公司冗余的部门进行了（    ）的精简。", options: ["大刀阔斧", "雕虫小技", "点铁成金", "倒屣相迎"], answer: "大刀阔斧" },
+      { sentence: "他（    ）地提出了问题。", options: ["单刀直入", "得不偿失", "胆大妄为", "大快人心"], answer: "单刀直入" },
+      { sentence: "他在法庭上（    ），混淆视听。", options: ["颠倒黑白", "大智若愚", "得过且过", "大腹便便"], answer: "颠倒黑白" },
+      { sentence: "那位（    ）的厨师做的菜却非常精致美味。", options: ["大腹便便", "当仁不让", "大器晚成", "调虎离山"], answer: "大腹便便" },
+      { sentence: "遇到危险时，他（    ），带大家安全脱险。", options: ["当机立断", "大言不惭", "点铁成金", "道貌岸然"], answer: "当机立断" },
+      { sentence: "他（    ）地说自己一天就能学会一门语言。", options: ["大言不惭", "呆若木鸡", "胆大妄为", "点铁成金"], answer: "大言不惭" },
+      { sentence: "这个长期欺压百姓的黑恶势力终于被铲除，真是（    ）。", options: ["大快人心", "大义凛然", "大智若愚", "大发雷霆"], answer: "大快人心" },
+      { sentence: "他明明是肇事者，却试图（    ），诬陷是对方的责任。", options: ["颠倒黑白", "胆大妄为", "得不偿失", "雕虫小技"], answer: "颠倒黑白" },
+      { sentence: "我们不能抱着（    ）的心态来准备这次重要的考试。", options: ["得过且过", "大惑不解", "大器晚成", "道貌岸然"], answer: "得过且过" },
+      { sentence: "会议开始时，主持人就（    ），提出了今天要解决的核心问题。", options: ["单刀直入", "大言不惭", "大刀阔斧", "大快人心"], answer: "单刀直入" },
+      { sentence: "别看他平时不说话，关键时总能想出办法，真是（    ）。", options: ["大智若愚", "大腹便便", "胆大妄为", "大发雷霆"], answer: "大智若愚" },
+      { sentence: "看到天气突然恶化，船长（    ），下令返航。", options: ["当机立断", "得过且过", "调虎离山", "道貌岸然"], answer: "当机立断" },
+      { sentence: "他年轻时平凡无奇，没想到（    ）。", options: ["大器晚成", "大义凛然", "呆若木鸡", "得心应手"], answer: "大器晚成" },
+      { sentence: "这位优秀的编辑真有（    ）的本事，能把平淡的稿件修改得精彩无比。", options: ["点铁成金", "大快人心", "大智若愚", "胆大妄为"], answer: "点铁成金" },
+      { sentence: "社区需要志愿者，老王（    ）地第一个报了名。", options: ["当仁不让", "道貌岸然", "大言不惭", "大腹便便"], answer: "当仁不让" },
+      { sentence: "为了赚这点外快而把身体累垮了，实在是（    ）。", options: ["得不偿失", "大刀阔斧", "调虎离山", "大发雷霆"], answer: "得不偿失" },
+      { sentence: "圣诞老人总是以一位（    ）、笑容慈祥的老爷爷形象出现。", options: ["大腹便便", "大器晚成", "大快人心", "得过且过"], answer: "大腹便便" },
+      { sentence: "他的实际表现和面试时给人的承诺（    ）。", options: ["大相径庭", "点铁成金", "单刀直入", "当机立断"], answer: "大相径庭" },
+      { sentence: "变魔术不过是（    ），真正的本事要靠刻苦学习。", options: ["雕虫小技", "大智若愚", "大刀阔斧", "道貌岸然"], answer: "雕虫小技" },
+      { sentence: "她在（    ）方面非常得体，客户都很信任她。", options: ["待人接物", "大发雷霆", "大言不惭", "胆大妄为"], answer: "待人接物" },
+      { sentence: "听说多年未见的老友来访，他欣喜若狂，（    ）。", options: ["倒屣相迎", "大快人心", "得不偿失", "点铁成金"], answer: "倒屣相迎" },
+      { sentence: "他工作（    ），难有成绩。", options: ["得过且过", "大智若愚", "大器晚成", "胆大妄为"], answer: "得过且过" },
+      { sentence: "这群（    ）的窃贼竟然在白天入室行窃。", options: ["胆大妄为", "大义凛然", "大言不惭", "道貌岸然"], answer: "胆大妄为" },
+      { sentence: "面对敌人的威胁，他（    ），毫不退缩。", options: ["大义凛然", "大快人心", "得心应手", "大惑不解"], answer: "大义凛然" },
+      { sentence: "听了他的话，我还是（    ）。", options: ["大惑不解", "点铁成金", "当仁不让", "得过且过"], answer: "大惑不解" },
+      { sentence: "这次改革需要（    ）的措施，才能见到成效。", options: ["大刀阔斧", "大腹便便", "调虎离山", "大智若愚"], answer: "大刀阔斧" },
+      { sentence: "乡亲们在村口（    ），欢迎远方的客人。", options: ["倒屣相迎", "大发雷霆", "得不偿失", "大义凛然"], answer: "倒屣相迎" },
+      { sentence: "他总是（    ）地说教，其实并不真诚。", options: ["道貌岸然", "胆大妄为", "大言不惭", "大快人心"], answer: "道貌岸然" },
+      { sentence: "练习多了，他写作文已经（    ）。", options: ["得心应手", "大快人心", "点铁成金", "当仁不让"], answer: "得心应手" },
+      { sentence: "他发现有人作弊，立刻（    ）。", options: ["大发雷霆", "大惑不解", "胆大妄为", "得过且过"], answer: "大发雷霆" },
+      { sentence: "那个（    ）的教授私下里却做着违法的勾当。", options: ["道貌岸然", "大智若愚", "大义凛然", "大腹便便"], answer: "道貌岸然" },
+      { sentence: "为了省小钱而耽误大事，真是（    ）。", options: ["得不偿失", "大器晚成", "单刀直入", "大快人心"], answer: "得不偿失" },
+      { sentence: "他们用了（    ）之计，成功避开了敌人。", options: ["调虎离山", "大发雷霆", "胆大妄为", "大义凛然"], answer: "调虎离山" },
+      { sentence: "他（    ）很有礼貌，大家都喜欢和他交往。", options: ["待人接物", "得过且过", "点铁成金", "道貌岸然"], answer: "待人接物" },
+      { sentence: "他居然放弃了这么好的机会，真让人（    ）。", options: ["大惑不解", "当仁不让", "得不偿失", "大智若愚"], answer: "大惑不解" },
+      { sentence: "罪犯终于被捉拿归案，真是（    ）。", options: ["大快人心", "大义凛然", "得心应手", "大发雷霆"], answer: "大快人心" },
+      { sentence: "他们两人的看法（    ）,所以经常吵架。", options: ["大相径庭", "调虎离山", "得不偿失", "大智若愚"], answer: "大相径庭" },
+      { sentence: "他总是（    ）地吹嘘自己的能力。", options: ["大言不惭", "大发雷霆", "点铁成金", "道貌岸然"], answer: "大言不惭" },
+      { sentence: "我们先派人引开保安，用（    ）计，然后再进去。", options: ["调虎离山", "大快人心", "得心应手", "大惑不解"], answer: "调虎离山" },
+      { sentence: "这位画家的手笔真是（    ），作品价值连城。", options: ["点铁成金", "大智若愚", "单刀直入", "得不偿失"], answer: "点铁成金" },
+      { sentence: "他平时沉默寡言，其实是（    ）。", options: ["大智若愚", "大器晚成", "道貌岸然", "大快人心"], answer: "大智若愚" },
+      { sentence: "听到这个消息，他吓得（    ）。", options: ["呆若木鸡", "大发雷霆", "大义凛然", "得心应手"], answer: "呆若木鸡" },
+      { sentence: "帮助别人是应该的事，我们要（    ）。", options: ["当仁不让", "大快人心", "大言不惭", "胆大妄为"], answer: "当仁不让" },
+      { sentence: "他承诺的福利和实际情况（    ），让员工们非常失望。", options: ["大相径庭", "得不偿失", "大发雷霆", "单刀直入"], answer: "大相径庭" },
+      { sentence: "那只（    ）的熊猫悠闲地坐在树下吃着竹子。", options: ["大腹便便", "大智若愚", "大言不惭", "当仁不让"], answer: "大腹便便" }
+    ];
 
     // 拼音选择题数据
     const pinyinChoose = [
-    {
-        "sentence": "大腹便便的正确拼音是?",
-        "options": ["A. dà fù pián pián", "B. dà fù biàn biàn"],
-        "answer": "A. dà fù pián pián"
-    },
-    {
-        "sentence": "大义凛然的正确拼音是?",
-        "options": ["A. dà yì lǐn rán", "B. dà yì bǐng rán"],
-        "answer": "A. dà yì lǐn rán"
-    },
-    {
-        "sentence": "大相径庭的正确拼音是?",
-        "options": ["A. dà xiāng jìng tíng", "B. dà xiāng jīng tíng"],
-        "answer": "A. dà xiāng jìng tíng"
-    },
-    {
-        "sentence": "大器晚成的正确拼音是?",
-        "options": ["A. dà qì wǎn chéng", "B. dà qì wán chéng"],
-        "answer": "A. dà qì wǎn chéng"
-    },
-    {
-        "sentence": "大智若愚的正确拼音是?",
-        "options": ["A. dà zhì ruò yú", "B. dà zhì ruò yǔ"],
-        "answer": "A. dà zhì ruò yú"
-    },
-    {
-        "sentence": "大快人心的正确拼音是?",
-        "options": ["A. dà kuài rén xīn", "B. dà kuài rén xīng"],
-        "answer": "A. dà kuài rén xīn"
-    },
-    {
-        "sentence": "当机立断的正确拼音是?",
-        "options": ["A. dāng jī lì duàn", "B. dàng jī lì duàn"],
-        "answer": "A. dāng jī lì duàn"
-    },
-    {
-        "sentence": "得不偿失的正确拼音是?",
-        "options": ["A. dé bù cháng shī", "B. dé bù shǎng shī"],
-        "answer": "A. dé bù cháng shī"
-    },
-    {
-        "sentence": "得心应手的正确拼音是?",
-        "options": ["A. dé xīn yìng shǒu", "B. dé xīn yīng shǒu"],
-        "answer": "A. dé xīn yìng shǒu"
-    },
-    {
-        "sentence": "调虎离山的正确拼音是?",
-        "options": ["A. tiáo hǔ lí shān", "B. diào hǔ lí shān"],
-        "answer": "B. diào hǔ lí shān"
-    },
-    {
-        "sentence": "大惑不解的正确拼音是?",
-        "options": ["A. dà huò bù jiě", "B. dà huò bù xiè"],
-        "answer": "A. dà huò bù jiě"
-    },
-    {
-        "sentence": "大言不惭的正确拼音是?",
-        "options": ["A. dà yán bù cán", "B. dà yán bù cǎn"],
-        "answer": "A. dà yán bù cán"
-    },
-    {
-        "sentence": "呆若木鸡的正确拼音是?",
-        "options": ["A. dāi ruò mù jī", "B. ái ruò mù jī"],
-        "answer": "A. dāi ruò mù jī"
-    },
-    {
-        "sentence": "单刀直入的正确拼音是?",
-        "options": ["A. dān dāo zhí rù", "B. dān dāo zhí rǔ"],
-        "answer": "A. dān dāo zhí rù"
-    },
-    {
-        "sentence": "胆大妄为的正确拼音是?",
-        "options": ["A. dǎn dà wàng wéi", "B. dǎn dà wàng wèi"],
-        "answer": "A. dǎn dà wàng wéi"
-    },
-    {
-        "sentence": "当仁不让的正确拼音是?",
-        "options": ["A. dāng rén bù ràng", "B. dàng rén bù ràng"],
-        "answer": "A. dāng rén bù ràng"
-    },
-    {
-        "sentence": "倒屣相迎的正确拼音是?",
-        "options": ["A. dǎo xǐ xiāng yíng", "B. dào xǐ xiāng yíng"],
-        "answer": "B. dào xǐ xiāng yíng"
-    },
-    {
-        "sentence": "道貌岸然的正确拼音是?",
-        "options": ["A. dào mào àn rán", "B. dào mào yán rán"],
-        "answer": "A. dào mào àn rán"
-    },
-    {
-        "sentence": "雕虫小技的正确拼音是?",
-        "options": ["A. diāo chóng xiǎo jì", "B. diāo chóng xiǎo jī"],
-        "answer": "A. diāo chóng xiǎo jì"
-    },
-    {
-        "sentence": "点铁成金的正确拼音是?",
-        "options": ["A. diǎn tiě chéng jīn", "B. diǎn tiě chén jīn"],
-        "answer": "A. diǎn tiě chéng jīn"
-    }
-]
-
+      { sentence: "大腹便便的正确拼音是?", options: ["A. dà fù pián pián", "B. dà fù biàn biàn"], answer: "A. dà fù pián pián" },
+      { sentence: "大义凛然的正确拼音是?", options: ["A. dà yì lǐn rán", "B. dà yì bǐng rán"], answer: "A. dà yì lǐn rán" },
+      { sentence: "大相径庭的正确拼音是?", options: ["A. dà xiāng jìng tíng", "B. dà xiāng jīng tíng"], answer: "A. dà xiāng jìng tíng" },
+      { sentence: "大器晚成的正确拼音是?", options: ["A. dà qì wǎn chéng", "B. dà qì wán chéng"], answer: "A. dà qì wǎn chéng" },
+      { sentence: "大智若愚的正确拼音是?", options: ["A. dà zhì ruò yú", "B. dà zhì ruò yǔ"], answer: "A. dà zhì ruò yú" },
+      { sentence: "大快人心的正确拼音是?", options: ["A. dà kuài rén xīn", "B. dà kuài rén xīng"], answer: "A. dà kuài rén xīn" },
+      { sentence: "当机立断的正确拼音是?", options: ["A. dāng jī lì duàn", "B. dàng jī lì duàn"], answer: "A. dāng jī lì duàn" },
+      { sentence: "得不偿失的正确拼音是?", options: ["A. dé bù cháng shī", "B. dé bù shǎng shī"], answer: "A. dé bù cháng shī" },
+      { sentence: "得心应手的正确拼音是?", options: ["A. dé xīn yìng shǒu", "B. dé xīn yīng shǒu"], answer: "A. dé xīn yìng shǒu" },
+      { sentence: "调虎离山的正确拼音是?", options: ["A. tiáo hǔ lí shān", "B. diào hǔ lí shān"], answer: "B. diào hǔ lí shān" },
+      { sentence: "大惑不解的正确拼音是?", options: ["A. dà huò bù jiě", "B. dà huò bù xiè"], answer: "A. dà huò bù jiě" },
+      { sentence: "大言不惭的正确拼音是?", options: ["A. dà yán bù cán", "B. dà yán bù cǎn"], answer: "A. dà yán bù cán" },
+      { sentence: "呆若木鸡的正确拼音是?", options: ["A. dāi ruò mù jī", "B. ái ruò mù jī"], answer: "A. dāi ruò mù jī" },
+      { sentence: "单刀直入的正确拼音是?", options: ["A. dān dāo zhí rù", "B. dān dāo zhí rǔ"], answer: "A. dān dāo zhí rù" },
+      { sentence: "胆大妄为的正确拼音是?", options: ["A. dǎn dà wàng wéi", "B. dǎn dà wàng wèi"], answer: "A. dǎn dà wàng wéi" },
+      { sentence: "当仁不让的正确拼音是?", options: ["A. dāng rén bù ràng", "B. dàng rén bù ràng"], answer: "A. dāng rén bù ràng" },
+      { sentence: "倒屣相迎的正确拼音是?", options: ["A. dǎo xǐ xiāng yíng", "B. dào xǐ xiāng yíng"], answer: "B. dào xǐ xiāng yíng" },
+      { sentence: "道貌岸然的正确拼音是?", options: ["A. dào mào àn rán", "B. dào mào yán rán"], answer: "A. dào mào àn rán" },
+      { sentence: "雕虫小技的正确拼音是?", options: ["A. diāo chóng xiǎo jì", "B. diāo chóng xiǎo jī"], answer: "A. diāo chóng xiǎo jì" },
+      { sentence: "点铁成金的正确拼音是?", options: ["A. diǎn tiě chéng jīn", "B. diǎn tiě chén jīn"], answer: "A. diǎn tiě chéng jīn" }
+    ];
 
     // 缺字填空数据
     const idiomsQuiz = [
       { sentence: "大刀阔（ ）", options: ["斧", "刀", "剑", "锤"], answer: "斧" },
-  { sentence: "大发雷（ ）", options: ["霆", "庭", "声", "雨"], answer: "霆" },
-  { sentence: "大（ ）不解", options: ["惑", "或", "货", "祸"], answer: "惑" },
-  { sentence: "大（ ）人心", options: ["快", "块", "会", "筷"], answer: "快" },
-  { sentence: "大器晚（ ）", options: ["成", "盛", "城", "诚"], answer: "成" },
-  { sentence: "大相径（ ）", options: ["庭", "廷", "停", "亭"], answer: "庭" },
-  { sentence: "大言不（ ）", options: ["惭", "渐", "残", "澹"], answer: "惭" },
-  { sentence: "大义（ ）然", options: ["凛", "檩", "冷", "拎"], answer: "凛" },
-  { sentence: "大智若（ ）", options: ["愚", "遇", "娱", "御"], answer: "愚" },
-  { sentence: "（ ）若木鸡", options: ["呆", "待", "怠", "袋"], answer: "呆" },
-  { sentence: "（ ）人接物", options: ["待", "持", "贷", "袋"], answer: "待" },
-  { sentence: "胆大（ ）为", options: ["妄", "枉", "望", "网"], answer: "妄" },
-  { sentence: "当机（ ）断", options: ["立", "力", "例", "粒"], answer: "立" },
-  { sentence: "当（ ）不让", options: ["仁", "任", "认", "刃"], answer: "仁" },
-  { sentence: "倒（ ）相迎", options: ["屣", "履", "喜", "洗"], answer: "屣" },
-  { sentence: "道貌（ ）然", options: ["岸", "按", "安", "案"], answer: "岸" },
-  { sentence: "（ ）不偿失", options: ["得", "德", "的", "地"], answer: "得" },
-  { sentence: "（ ）过且过", options: ["得", "德", "的", "地"], answer: "得" },
-  { sentence: "得心应（ ）手", options: ["应 (yìng)", "应 (yīng)", "映", "盈"], answer: "应 (yìng)" },
-  { sentence: "颠（ ）黑白", options: ["倒", "到", "导", "道"], answer: "倒" },
-  { sentence: "点铁成（ ）", options: ["金", "京", "今", "斤"], answer: "金" },
-  { sentence: "雕虫小（ ）", options: ["技", "枝", "迹", "计"], answer: "技" },
-  { sentence: "（ ）虎离山", options: ["调", "雕", "跳", "掉"], answer: "调" },
-];
-
+      { sentence: "大发雷（ ）", options: ["霆", "庭", "声", "雨"], answer: "霆" },
+      { sentence: "大（ ）不解", options: ["惑", "或", "货", "祸"], answer: "惑" },
+      { sentence: "大（ ）人心", options: ["快", "块", "会", "筷"], answer: "快" },
+      { sentence: "大器晚（ ）", options: ["成", "盛", "城", "诚"], answer: "成" },
+      { sentence: "大相径（ ）", options: ["庭", "廷", "停", "亭"], answer: "庭" },
+      { sentence: "大言不（ ）", options: ["惭", "渐", "残", "澹"], answer: "惭" },
+      { sentence: "大义（ ）然", options: ["凛", "檩", "冷", "拎"], answer: "凛" },
+      { sentence: "大智若（ ）", options: ["愚", "遇", "娱", "御"], answer: "愚" },
+      { sentence: "（ ）若木鸡", options: ["呆", "待", "怠", "袋"], answer: "呆" },
+      { sentence: "（ ）人接物", options: ["待", "持", "贷", "袋"], answer: "待" },
+      { sentence: "胆大（ ）为", options: ["妄", "枉", "望", "网"], answer: "妄" },
+      { sentence: "当机（ ）断", options: ["立", "力", "例", "粒"], answer: "立" },
+      { sentence: "当（ ）不让", options: ["仁", "任", "认", "刃"], answer: "仁" },
+      { sentence: "倒（ ）相迎", options: ["屣", "履", "喜", "洗"], answer: "屣" },
+      { sentence: "道貌（ ）然", options: ["岸", "按", "安", "案"], answer: "岸" },
+      { sentence: "（ ）不偿失", options: ["得", "德", "的", "地"], answer: "得" },
+      { sentence: "（ ）过且过", options: ["得", "德", "的", "地"], answer: "得" },
+      { sentence: "得心应（ ）手", options: ["应 (yìng)", "应 (yīng)", "映", "盈"], answer: "应 (yìng)" },
+      { sentence: "颠（ ）黑白", options: ["倒", "到", "导", "道"], answer: "倒" },
+      { sentence: "点铁成（ ）", options: ["金", "京", "今", "斤"], answer: "金" },
+      { sentence: "雕虫小（ ）", options: ["技", "枝", "迹", "计"], answer: "技" },
+      { sentence: "（ ）虎离山", options: ["调", "雕", "跳", "掉"], answer: "调" }
+    ];
 
     let currentMode = 'fill-blank';
     let currentIndex = 0;
@@ -556,4 +473,3 @@
   </script>
 </body>
 </html>
-
